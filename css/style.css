@@ -126,3 +126,9 @@ h4{
 #menu ul li a:hover {
     background-color: #111;
 }
+.error{
+  color: red;
+}
+.verified{
+  color: green;
+}

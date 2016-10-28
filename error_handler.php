@@ -1,5 +1,7 @@
 <?php
 
+include_once 'functions.php';
+
 if (isset($_POST['SubmitButton'])) {
     $errPass = $errMail = $errPseudo = $errEmpty = null;
     $err = false;
@@ -24,20 +26,16 @@ if (isset($_POST['SubmitButton'])) {
         $errPseudo = 'Pseudo must contain between 3 and 15 characters, composed with only letters and numbers';
     }
 
-    try {
-        $bdd = new PDO('mysql:host=http://what-do-you-see-224378.nitrousapp.com;dbname=test;charset=utf8', 'root', 'ilovecats');
-    } catch (Exception $e) {
-        die('Erreur : '.$e->getMessage());
-    }
+    $bdd = connect();
 
-    $checkPseudo = $bdd->query("SELECT pseudo FROM users2 WHERE pseudo = '".mysql_escape_string($_POST['pseudo'])."' ");
+    $checkPseudo = $bdd->query("SELECT pseudo FROM users WHERE pseudo = '".mysql_escape_string($_POST['pseudo'])."' ");
     $state = $checkPseudo->rowCount();
     if ($state > 0) {
         $errPseudo = 'Pseudo already in use';
         $err = true;
     }
 
-    $checkMail = $bdd->query("SELECT email FROM users2 WHERE email = '".mysql_escape_string($_POST['email'])."' ");
+    $checkMail = $bdd->query("SELECT email FROM users WHERE email = '".mysql_escape_string($_POST['email'])."' ");
     $state = $checkMail->rowCount();
     if ($state > 0) {
         $errMail = 'Email already used';
