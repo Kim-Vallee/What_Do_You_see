@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+html, body {
+                margin: 0;
+                padding:0;
+                position:absolute;/* this is very important*/
+                bottom:0;
+                top:0;
+                right:0;
+                left:0;
+                background-color: #e6e6e6;
+            }
+#archives, #div2
+{
+  height: 100%;
+ /* border: 1px solid red; */
+  float: left; */
+}
+  #archives
+  {
+    position: fixed;
+    width: 15%;
+    background: black;
+    color: white;
+  }
+    #archives h2
+    {
+      margin-top: 50px;
+      font-weight: bold;
+    }
+    #archives ul
+    {
+      list-style-type: square;
+    }
+  #div2
+  {
+    width: 85%;
+    margin-left: 15%;
+  }
+
+#uploadForm
+{
+  margin: 20px;
+}
+  #uploadForm input[type="text"]
+  {
+    font-size:14pt;
+    width: 100%;
+    display: block;
+  }
+  #uploadForm input[type="button"]
+  {
+    margin-left: 85%;
+    width: 15%;
+    height: 50px;
+    background: grey;
+    border-radius: 10px;
+    font-weight: 1em;
+  }
+#uploadPart{
+  margin: 10px;
+}
+#dragFile{
+  font-weight: bold;
+  padding: 1em 0;
+	margin: 1em 0;
+	color: #555;
+	border: 2px dashed #555;
+	border-radius: 7px;
+	cursor: default;
+  height: 100px;
+}
+
+#content{
+  margin-top: 50px;
+}
+
+.centerText{
+  text-align: center;
+}
+h4{
+  margin: 0;
+}
+.images{
+  padding: 10px;
+}
+.comment{
+  padding-left: 10px;
+  background-color: grey;
+}
+.commentText{
+  margin-left: 10px;
+}
+.active {
+    background-color: #4CAF50;
+}
+
+#menu{
+  position: fixed;
+  width: 100%;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#menu ul li {
+    float: left;
+}
+
+#menu ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+#menu ul li a:hover {
+    background-color: #111;
+}
